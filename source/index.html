@@ -31,7 +31,7 @@
                 <ul class="language__list list">
                   <li class="language__list-item" v-for="(button, i) in language.langList" :key="i">
                     <button class="language__list-button button" type="button" @click="chooseLang">
-                      <img class="language__list-item-img" :src="button.img" />
+                      <img class="language__list-item-img" :src="button.img" :alt="button.lang" />
                       <span class="language__list-item-text">{{ button.lang }}</span>
                     </button>
                   </li>
@@ -186,7 +186,9 @@
 
         methods: {
           chooseLang: function(evt) {
-            chooseLang.src = evt.currentTarget.querySelector(".language__list-item-img").src;
+            const langImg = evt.currentTarget.querySelector(".language__list-item-img");
+            chooseLang.src = langImg.src;
+            chooseLang.alt = langImg.alt;
 
             this.toggleLangList();
           },

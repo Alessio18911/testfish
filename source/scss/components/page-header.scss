@@ -5,6 +5,10 @@
   background-position: center;
   background-size: cover;
 
+  @include mq(1199) {
+    padding: 10px 0 30px;
+  }
+
   &__wrapper {
     display: flex;
     flex-direction: column;
@@ -16,10 +20,19 @@
     align-items: center;
     width: 100%;
     padding: 0 0 112px 12.5%;
+
+    @include mq(1199) {
+      padding: 0 0 70px;
+    }
   }
 
   &__main-nav {
     padding: 1px 0 0;
+
+    @include mq(1199) {
+      margin: 0 auto;
+
+    }
   }
 
   &__language {
@@ -29,6 +42,10 @@
 
   &__logo {
     margin: 0 0 261px;
+
+    @include mq(1199) {
+      margin: 0 0 115px;
+    }
   }
 
   &__info {
@@ -38,5 +55,9 @@
     font-weight: 500;
     line-height: 1.58;
     text-align: center;
+
+    @include mq(1199) {
+      font-size: 17px;
+    }
   }
 }

@@ -4,10 +4,18 @@
   align-items: center;
   padding: 72px 0 67px;
 
+  @include mq(1199) {
+    padding: 40px 0;
+  }
+
   &__title {
     display: flex;
     align-items: center;
     margin: 0 9px 29px 0;
+
+    @include mq(1199) {
+      margin: 0 0 20px;
+    }
 
     &::before,
     &::after {
@@ -24,10 +32,30 @@
 
   &__button-block {
     display: flex;
+    flex-wrap: wrap;
+
+    @include mq(1199) {
+      margin: 0 -8px;
+    }
   }
 
   &__button {
     margin: 0 16px;
     font-size: 18px;
+
+    @include mq(1199) {
+      width: 300px;
+      padding: 8px 20px;
+      margin: 0 8px;
+      font-size: 16px;
+    }
+
+    svg {
+      @include mq(1199) {
+        top: -1px;
+        width: 28px;
+        height: 22px;
+      }
+    }
   }
 }

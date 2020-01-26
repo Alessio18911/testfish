@@ -19,7 +19,10 @@ body, .body {
 .wrapper {
   max-width: 1142px;
   margin: 0 auto;
-  outline: 1px solid red;
+
+  @include mq(1199) {
+    max-width: 95%;
+  }
 }
 
 .list {

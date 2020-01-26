@@ -6,6 +6,11 @@
   width: 86.7%;
   font-weight: 600;
 
+  @include mq(1199) {
+    width: 633px;
+    font-size: 12px;
+  }
+
   &__item {
     margin: 0 5px;
   }
@@ -14,5 +19,12 @@
     display: block;
     padding: 5px 0;
     color: inherit;
+
+    &::after {
+      @include mq(1199) {
+        height: 1px;
+      }
+    }
+
   }
 }

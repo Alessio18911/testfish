@@ -4,4 +4,8 @@
   font-weight: 300;
   line-height: 1.2;
   color: $blue1;
+
+  @include mq(1199) {
+    font-size: 28px;
+  }
 }

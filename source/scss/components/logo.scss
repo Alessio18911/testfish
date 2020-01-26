@@ -2,18 +2,27 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+
   svg {
     display: block;
     width: 132px;
-    height: 80px;
+    height: auto;
     margin: 0 0 7px;
     fill: $blue1;
+
+    @include mq(1199) {
+      width: 100px;
+    }
   }
 
   &__title {
     margin: 0 0 8px;
     font-family: "Gotham Pro", "Arial", sans-serif;
     font-weight: 900;
+
+    @include mq(1199) {
+      font-size: 23px;
+    }
   }
 
   &__info {
@@ -21,5 +30,9 @@
     margin: 0;
     font-size: 16px;
     font-weight: 600;
+
+    @include mq(1199) {
+      font-size: 14px;
+    }
   }
 }
