@@ -1,0 +1,9 @@
+@mixin mq($max-width) {
+ @media (max-width: $max-width + "px") {
+   @content;
+ }
+}
+
+@mixin transition($props: null, $time: 0.25s, $timingFunction: ease-in-out) {
+ transition: $props $time $timingFunction;
+}

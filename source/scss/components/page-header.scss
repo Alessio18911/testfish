@@ -1,0 +1,42 @@
+.page-header {
+  padding: 26px 0 151px;
+  color: $blue1;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0 0 112px 12.5%;
+  }
+
+  &__main-nav {
+    padding: 1px 0 0;
+  }
+
+  &__language {
+    position: relative;
+    margin: 0 0 0 auto;
+  }
+
+  &__logo {
+    margin: 0 0 261px;
+  }
+
+  &__info {
+    width: 64.7%;
+    margin: 0;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.58;
+    text-align: center;
+  }
+}

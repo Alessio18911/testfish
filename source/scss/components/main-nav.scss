@@ -1,0 +1,18 @@
+.main-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 -5px;
+  width: 86.7%;
+  font-weight: 600;
+
+  &__item {
+    margin: 0 5px;
+  }
+
+  &__item-link {
+    display: block;
+    padding: 5px 0;
+    color: inherit;
+  }
+}

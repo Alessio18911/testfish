@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.min.css" />
+  </head>
+  <body>
+    <div style="display: none;">
+      <include src="dist/img/sprite.svg"></include>
+    </div>
+    <div id="fish">
+      <header class="page-header" :style="{ 'background-image': 'url(' + header.bg + ')' }">
+        <div class="page-header__wrapper wrapper">
+          <div class="page-header__top">
+            <ul class="page-header__main-nav main-nav list">
+              <li class="main-nav__item" v-for="(navItem, i) in header.nav" :key="i">
+                <a href="" class="main-nav__item-link link link--blue">{{ navItem }}</a>
+              </li>
+            </ul>
+            <div class="page-header__language language">
+              <img class="language__chosen-img" :src="language.chosenLangImg" :alt="language.chosenLangImgAlt" />
+              <button class="language__button button" type="button" @click="toggleLangList">
+                <svg width="12" height="7">
+                  <use xlink:href="img/sprite.svg#icon-arrow" />
+                </svg>
+              </button>
+              <div class="language__list-wrapper">
+                <ul class="language__list list">
+                  <li class="language__list-item" v-for="(button, i) in language.langList" :key="i">
+                    <button class="language__list-button button" type="button" @click="chooseLang">
+                      <img class="language__list-item-img" :src="button.img" />
+                      <span class="language__list-item-text">{{ button.lang }}</span>
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+          <div class="page-header__logo logo">
+            <svg width="132" height="77">
+              <use xlink:href="img/sprite.svg#icon-logo"/>
+            </svg>
+            <h1 class="logo__title">{{ header.logoTitle }}</h1>
+            <p class="logo__info">{{ header.logoInfo }}</p>
+          </div>
+
+          <p class="page-header__info">{{ header.info }}</p>
+        </div>
+      </header>
+
+      <main class="page-content">
+        <section class="main-products">
+          <div class="main-products__wrapper" :style="{ 'background-image': 'url(' + mainProducts.bg + ')' }">
+            <div class="main-products__products wrapper">
+              <h2 class="main-products__title title">{{ mainProducts.title }}</h2>
+              <p class="main-products__info">{{ mainProducts.info }}</p>
+              <ul class="main-products__list list">
+                <li class="main-products__list-item" v-for="(item, i) in mainProducts.products" :key="i">
+                  <img class="main-products__item-img" :src="item.img" width="246" height="154" :alt="item.alt" >
+                  <p class="main-products__item-info" v-html="item.name"></p>
+                </li>
+              </ul>
+              <a class="main-products__button link button button--blue" :href="mainProducts.button.buttonHref">{{ mainProducts.button.buttonSign }}</a>
+            </div>
+          </div>
+          <section class="brochures">
+            <h2 class="brochures__title title"><span>{{ brochures.title }}</span></h2>
+            <div class="brochures__button-block">
+              <a class="brochures__button link button button--with-icon" :href="button.href" download v-for="(button, i) in brochures.buttons" :key="i">
+                <svg width="35" height="25">
+                  <use xlink:href="img/sprite.svg#icon-book"/>
+                </svg>
+                <span>{{ button.name }}</span>
+              </a>
+            </div>
+          </section>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+      const fishSite = new Vue({
+        el: "#fish",
+        data: {
+          header: {
+            bg: "img/header-bg.jpg",
+            nav: ["Our products", "Receipes", "Services", "The promise", "Origin", "Markets", "CSR", "Company", "Contacts"],
+            logoTitle: "Salmonbellies AS",
+            logoInfo: "Trout is the new salmon",
+            info: "Salmonbellies and Lyxfish commit to sell at NO higher prices then quoted from our partner Kalaneuvos"
+          },
+
+          mainProducts: {
+            bg: "img/ice_bg.jpg",
+            title: "Main fish products",
+            info: "The fish is of premium quality due to aquaculture and harvest in accordance to ASC certified criterias and with optimal combination of fish feed during the farming syclus",
+
+            products: [
+              {
+                img: "img/fish-1.png",
+                alt: "Fish photo",
+                name: "TROUT WHOLE ONCORHYNCHUS MYKISS"
+              },
+              {
+                img: "img/fish-2.png",
+                alt: "Fish photo",
+                name: "TROUT FILLET<br> ONCORHYNCHUS MYKISS"
+              },
+              {
+                img: "img/fish-3.png",
+                alt: "Fish photo",
+                name: "SALMON WHOLE<br> SALMO SALAR"
+              },
+              {
+                img: "img/fish-4.png",
+                alt: "Fish photo",
+                name: "SALMON C-CUT FILLET<br> SALMO SALAR"
+              },
+              {
+                img: "img/fish-5.png",
+                alt: "Fish photo",
+                name: "WHITEFISH<br> COREGONUS LAVARETUS"
+              },
+              {
+                img: "img/fish-6.png",
+                alt: "Fish photo",
+                name: "WHITEFISH FILLET WITHOUT SKIN AND SCALED"
+              },
+              {
+                img: "img/fish-7.png",
+                alt: "Fish photo",
+                name: "FARMED BROWN TROUT SALMO TRUTTA"
+              },
+              {
+                img: "img/fish-8.png",
+                alt: "Fish photo",
+                name: "FARMED BROWN TROUT FILLET<br> SALMO TRUTTA"
+              }
+            ],
+
+            button: {
+              buttonHref: "#",
+              buttonSign: "View all products"
+            }
+          },
+
+          brochures: {
+            title: "Our brochures",
+            buttons: [
+              {
+                href: "",
+                name: "Chinese version download"
+              },
+              {
+                href: "",
+                name: "English version download"
+              }
+            ]
+          },
+
+          language: {
+            chosenLangImg: "img/uk.png",
+            chosenLangImgAlt: "English",
+            langList: [
+              {
+                img: "img/uk.png",
+                lang: "English"
+              },
+              {
+                img: "img/it.png",
+                lang: "Italian"
+              },
+              {
+                img: "img/ch.png",
+                lang: "Chinese"
+              }
+            ]
+          }
+        },
+
+        methods: {
+          chooseLang: function(evt) {
+            chooseLang.src = evt.currentTarget.querySelector(".language__list-item-img").src;
+
+            this.toggleLangList();
+          },
+
+          toggleLangList: function() {
+            if (!lang.classList.contains("language--opened")) {
+              lang.classList.add("language--opened");
+            } else {
+              lang.classList.remove("language--opened");
+            }
+          }
+        }
+      });
+
+      const lang = document.querySelector(".language");
+      const chooseLang = lang.querySelector(".language__chosen-img");
+    </script>
+  </body>
+</html>

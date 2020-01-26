@@ -1,0 +1,25 @@
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  svg {
+    display: block;
+    width: 132px;
+    height: 80px;
+    margin: 0 0 7px;
+    fill: $blue1;
+  }
+
+  &__title {
+    margin: 0 0 8px;
+    font-family: "Gotham Pro", "Arial", sans-serif;
+    font-weight: 900;
+  }
+
+  &__info {
+
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+  }
+}

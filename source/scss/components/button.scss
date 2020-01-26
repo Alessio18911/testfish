@@ -1,0 +1,72 @@
+.button {
+  position: relative;
+  display: inline-block;
+  padding: 0;
+  background-color: transparent;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+
+  &--blue {
+    width: 227px;
+    padding: 11px;
+    color: $white;
+    text-align: center;
+    background-color: $blue1;
+    border: 2px solid transparent;
+    border-radius: 30px;
+    transition: color 0.25s ease-in-out, border-color 0.25s ease-in-out, background-color 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
+
+    &:hover {
+      color: $blue1;
+      background-color: $white;
+      border-color: $blue1;
+    }
+
+    &:active {
+      box-shadow: inset 0px 0px 10px 3px $blue1;
+    }
+  }
+
+  &--with-icon {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 356px;
+    padding: 11px 32px 11px 22px;
+    color: $blue2;
+    text-align: right;
+    border: 1px solid $blue2;
+    border-radius: 25px;
+    transition: color 0.25s ease-in-out, background-color 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
+
+    &:hover {
+      color: $white;
+      background-color: $blue2;
+
+      svg {
+        fill: $white;
+      }
+    }
+
+    &:active {
+      color: $blue2;
+      background-color: $white;
+      box-shadow: inset 0px 0px 10px 3px $blue2;
+
+      svg {
+        fill: $blue2;
+      }
+    }
+
+    svg {
+      position: relative;
+      top: -2px;
+      flex-shrink: 0;
+      width: 32px;
+      height: 25px;
+      fill: $blue2;
+      transition: fill 0.25s ease-in-out;
+    }
+  }
+}

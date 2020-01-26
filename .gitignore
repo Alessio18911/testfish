@@ -1,0 +1,11 @@
+.DS_Store
+.idea
+.vscode
+*.ai
+*.log
+*.pdf
+*.psd
+dist/
+node_modules/
+npm-debug.*
+Thumbs.db
