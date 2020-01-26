@@ -14,10 +14,18 @@
       width: 78.13%;
       padding: 30px 0;
     }
+
+    @include mq(767) {
+      padding: 15px 0;
+    }
   }
 
   &__title {
     margin: 0 0 12px;
+
+    @include mq(767) {
+      margin: 0 0 5px;
+    }
   }
 
   &__info {
@@ -27,7 +35,11 @@
 
     @include mq(1199) {
       width: 95%;
-    line-height: 1.5;
+      line-height: 1.5;
+    }
+
+    @include mq(767) {
+      font-size: 13px;
     }
   }
 
@@ -38,6 +50,11 @@
 
     @include mq(1199) {
       margin: 0 -10px 10px;
+    }
+
+    @include mq(767) {
+      display: block;
+      margin: 0 0 30px;
     }
   }
 
@@ -51,7 +68,20 @@
 
     @include mq(1199) {
       width: 30%;
-    margin: 0 10px 15px;
+      margin: 0 10px 15px;
+    }
+
+    @include mq(767) {
+      width: 100%;
+      max-width: 340px;
+      padding: 0 15px 15px;
+      margin: 0 auto 15px;
+    }
+
+    &:last-of-type {
+      @include mq(767) {
+        margin: 0 auto;
+      }
     }
   }
 
@@ -63,6 +93,10 @@
 
     @include mq(1199) {
       margin: 0 auto 10px;
+    }
+
+    @include mq(767) {
+      margin: 0 auto;
     }
   }
 
@@ -78,6 +112,10 @@
       font-size: 12px;
     }
 
+    @include mq(767) {
+      margin: 0 auto;
+    }
+
     br {
       @include mq(1199) {
         display: none;
@@ -87,5 +125,16 @@
 
   &__button {
     font-size: 18px;
+
+    @include mq(1199) {
+      width: 195px;
+      font-size: 16px;
+    }
+
+    @include mq(767) {
+      font-size: 14px;
+      width: 100%;
+      max-width: 500px;
+    }
   }
 }

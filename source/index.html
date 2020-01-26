@@ -67,7 +67,7 @@
               <a class="main-products__button link button button--blue" :href="mainProducts.button.buttonHref">{{ mainProducts.button.buttonSign }}</a>
             </div>
           </div>
-          <section class="brochures">
+          <section class="brochures wrapper">
             <h2 class="brochures__title title"><span>{{ brochures.title }}</span></h2>
             <div class="brochures__button-block">
               <a class="brochures__button link button button--with-icon" :href="button.href" download v-for="(button, i) in brochures.buttons" :key="i">

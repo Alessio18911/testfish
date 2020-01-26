@@ -21,7 +21,12 @@ body, .body {
   margin: 0 auto;
 
   @include mq(1199) {
-    max-width: 95%;
+    max-width: none;
+    width: 95%;
+  }
+
+  @include mq(767) {
+    width: calc(100% - 30px);
   }
 }
 

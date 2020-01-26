@@ -9,7 +9,7 @@
   }
 
   @include mq(767) {
-    padding: 25px 15px;
+    padding: 25px 0;
   }
 
   &__title {
@@ -33,6 +33,7 @@
       background: url(../../img/icon-wave.svg) no-repeat;
 
       @include mq(767) {
+        width: 40px;
         background-size: 37px 7px;
       }
     }
