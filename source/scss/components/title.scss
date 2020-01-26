@@ -8,4 +8,8 @@
   @include mq(1199) {
     font-size: 28px;
   }
+
+  @include mq(767) {
+    font-size: 22px;
+  }
 }
