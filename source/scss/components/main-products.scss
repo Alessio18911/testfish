@@ -1,6 +1,5 @@
 .main-products {
   text-align: center;
-  outline: 1px solid blue;
 
   &__wrapper {
     background-repeat: no-repeat;
@@ -46,10 +45,10 @@
   &__list {
     display: flex;
     flex-wrap: wrap;
-    margin: 0 -15px 10px;
+    margin: 0 -15px 9px;
 
     @include mq(1199) {
-      margin: 0 -10px 10px;
+      margin: 0 -10px 9px;
     }
 
     @include mq(767) {
@@ -101,7 +100,7 @@
   }
 
   &__item-info {
-    width: 90%;
+    width: 95%;
     margin: 0 auto 19px;
     font-weight: 600;
     line-height: 1.57;

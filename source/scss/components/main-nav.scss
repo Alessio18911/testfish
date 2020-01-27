@@ -11,8 +11,20 @@
     font-size: 12px;
   }
 
+  @include mq(767) {
+    display: block;
+    padding: 25px 0;
+    font-size: 18px;
+    background-color: $blue3;
+  }
+
   &__item {
     margin: 0 5px;
+
+    @include mq(767) {
+      display: flex;
+      justify-content: center;
+    }
   }
 
   &__item-link {
@@ -20,11 +32,18 @@
     padding: 5px 0;
     color: inherit;
 
+    @include mq(767) {
+      padding: 8px 0;
+    }
+
     &::after {
       @include mq(1199) {
         height: 1px;
       }
-    }
 
+      @include mq(767) {
+        height: 2px;
+      }
+    }
   }
 }

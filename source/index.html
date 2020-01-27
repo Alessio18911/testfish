@@ -15,6 +15,9 @@
       <header class="page-header" :style="{ 'background-image': 'url(' + header.bg + ')' }">
         <div class="page-header__wrapper wrapper">
           <div class="page-header__top">
+            <div class="page-header__burger burger">
+              <button class="page-header__burger-button burger__button button" type="button" aria-label="Показать главное меню"></button>
+            </div>
             <ul class="page-header__main-nav main-nav list">
               <li class="main-nav__item" v-for="(navItem, i) in header.nav" :key="i">
                 <a href="" class="main-nav__item-link link link--blue">{{ navItem }}</a>
@@ -38,7 +41,6 @@
                 </ul>
               </div>
             </div>
-
           </div>
           <div class="page-header__logo logo">
             <svg width="132" height="77">
@@ -83,6 +85,7 @@
       </main>
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/svgxuse/1.2.6/svgxuse.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script>
       const fishSite = new Vue({
