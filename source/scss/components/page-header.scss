@@ -5,11 +5,11 @@
   background-position: center;
   background-size: cover;
 
-  @include mq(1199) {
+  @include mq($tablet) {
     padding: 10px 0 30px;
   }
 
-  @include mq(767) {
+  @include mq($mobile) {
     position: relative;
   }
 
@@ -25,11 +25,11 @@
     width: 100%;
     padding: 0 0 114px 12.5%;
 
-    @include mq(1199) {
+    @include mq($tablet) {
       padding: 0 0 70px;
     }
 
-    @include mq(767) {
+    @include mq($mobile) {
       padding: 0 0 45px;
     }
   }
@@ -37,11 +37,11 @@
   &__main-nav {
     padding: 3px 0 0;
 
-    @include mq(1199) {
+    @include mq($tablet) {
       margin: 0 auto;
     }
 
-    @include mq(767) {
+    @include mq($mobile) {
       display: none;
       position: absolute;
       top: 0;
@@ -54,7 +54,7 @@
     position: relative;
     margin: 0 0 0 auto;
 
-    @include mq(767) {
+    @include mq($mobile) {
       order: -1;
       margin: 0 auto 0 0;
 
@@ -68,11 +68,11 @@
   &__logo {
     margin: 0 0 261px;
 
-    @include mq(1199) {
+    @include mq($tablet) {
       margin: 0 0 115px;
     }
 
-    @include mq(767) {
+    @include mq($mobile) {
       margin: 0 0 70px;
     }
   }
@@ -85,11 +85,11 @@
     line-height: 1.58;
     text-align: center;
 
-    @include mq(1199) {
+    @include mq($tablet) {
       font-size: 17px;
     }
 
-    @include mq(767) {
+    @include mq($mobile) {
       width: 95%;
       font-size: 14px;
       line-height: 1.4;

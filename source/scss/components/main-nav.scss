@@ -6,12 +6,12 @@
   width: 86.7%;
   font-weight: 600;
 
-  @include mq(1199) {
+  @include mq($tablet) {
     width: 633px;
     font-size: 12px;
   }
 
-  @include mq(767) {
+  @include mq($mobile) {
     display: block;
     padding: 25px 0;
     font-size: 18px;
@@ -21,7 +21,7 @@
   &__item {
     margin: 0 5px;
 
-    @include mq(767) {
+    @include mq($mobile) {
       display: flex;
       justify-content: center;
     }
@@ -32,16 +32,16 @@
     padding: 5px 0;
     color: inherit;
 
-    @include mq(767) {
+    @include mq($mobile) {
       padding: 8px 0;
     }
 
     &::after {
-      @include mq(1199) {
+      @include mq($tablet) {
         height: 1px;
       }
 
-      @include mq(767) {
+      @include mq($mobile) {
         height: 2px;
       }
     }

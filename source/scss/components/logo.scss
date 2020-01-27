@@ -10,11 +10,11 @@
     margin: 0 0 9px;
     fill: $blue1;
 
-    @include mq(1199) {
+    @include mq($tablet) {
       width: 100px;
     }
 
-    @include mq(767) {
+    @include mq($mobile) {
       width: 70px;
     }
   }
@@ -24,11 +24,11 @@
     font-family: "Gotham Pro", "Arial", sans-serif;
     font-weight: 900;
 
-    @include mq(1199) {
+    @include mq($tablet) {
       font-size: 23px;
     }
 
-    @include mq(767) {
+    @include mq($mobile) {
       font-size: 20px;
     }
   }
@@ -38,11 +38,11 @@
     font-size: 16px;
     font-weight: 600;
 
-    @include mq(1199) {
+    @include mq($tablet) {
       font-size: 14px;
     }
 
-    @include mq(767) {
+    @include mq($mobile) {
       font-size: 12px;
     }
   }

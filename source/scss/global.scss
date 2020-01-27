@@ -20,12 +20,12 @@ body, .body {
   max-width: 1142px;
   margin: 0 auto;
 
-  @include mq(1199) {
+  @include mq($tablet) {
     max-width: none;
     width: 95%;
   }
 
-  @include mq(767) {
+  @include mq($mobile) {
     width: calc(100% - 30px);
   }
 }

@@ -4,11 +4,11 @@
   align-items: center;
   padding: 72px 0 67px;
 
-  @include mq(1199) {
+  @include mq($tablet) {
     padding: 40px 0;
   }
 
-  @include mq(767) {
+  @include mq($mobile) {
     padding: 25px 0;
   }
 
@@ -17,11 +17,11 @@
     align-items: center;
     margin: 0 9px 29px 0;
 
-    @include mq(1199) {
+    @include mq($tablet) {
       margin: 0 0 20px;
     }
 
-    @include mq(767) {
+    @include mq($mobile) {
       margin: 0 0 15px;
     }
 
@@ -32,7 +32,7 @@
       height: 6px;
       background: url(../../img/icon-wave.svg) no-repeat;
 
-      @include mq(767) {
+      @include mq($mobile) {
         width: 40px;
         background-size: 37px 7px;
       }
@@ -41,7 +41,7 @@
     span {
       margin: 0 17px 0 22px;
 
-      @include mq(767) {
+      @include mq($mobile) {
         margin: 0 10px;
       }
     }
@@ -51,11 +51,11 @@
     display: flex;
     flex-wrap: wrap;
 
-    @include mq(1199) {
+    @include mq($tablet) {
       margin: 0 -8px;
     }
 
-    @include mq(767) {
+    @include mq($mobile) {
       margin: 0;
     }
   }
@@ -64,14 +64,14 @@
     margin: 0 16px;
     font-size: 18px;
 
-    @include mq(1199) {
+    @include mq($tablet) {
       width: 300px;
       padding: 8px 20px;
       margin: 0 8px;
       font-size: 16px;
     }
 
-    @include mq(767) {
+    @include mq($mobile) {
       justify-content: center;
       width: 100%;
       max-width: 500px;
@@ -80,19 +80,19 @@
     }
 
     &:last-of-type {
-      @include mq(767) {
+      @include mq($mobile) {
         margin-bottom: 0;
       }
     }
 
     svg {
-      @include mq(1199) {
+      @include mq($tablet) {
         top: -1px;
         width: 28px;
         height: 22px;
       }
 
-      @include mq(767) {
+      @include mq($mobile) {
         margin: 0 15px 0 0;
       }
     }
