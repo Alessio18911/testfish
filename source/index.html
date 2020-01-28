@@ -15,17 +15,17 @@
       <header class="page-header" :style="{ 'background-image': 'url(' + header.bg + ')' }">
         <div class="page-header__wrapper wrapper">
           <div class="page-header__top">
-            <div class="page-header__burger burger">
-              <button class="page-header__burger-button burger__button button" type="button" aria-label="Показать главное меню"></button>
+            <button class="page-header__burger burger button" type="button" aria-label="Show main navigation" @click="onBurgerClick"><span></span></button>
+              <div class="page-header__main-nav-wrapper">
+              <ul class="page-header__main-nav main-nav list">
+                <li class="main-nav__item" v-for="(navItem, i) in header.nav" :key="i">
+                  <a href="" class="main-nav__item-link link link--blue">{{ navItem }}</a>
+                </li>
+              </ul>
             </div>
-            <ul class="page-header__main-nav main-nav list">
-              <li class="main-nav__item" v-for="(navItem, i) in header.nav" :key="i">
-                <a href="" class="main-nav__item-link link link--blue">{{ navItem }}</a>
-              </li>
-            </ul>
             <div class="page-header__language language">
               <img class="language__chosen-img" :src="language.chosenLangImg" :alt="language.chosenLangImgAlt" />
-              <button class="language__button button" type="button" @click="toggleLangList">
+              <button class="language__button button" type="button" aria-label="Open language choice menu" @click="onLangMenuButtonClick">
                 <svg width="12" height="7">
                   <use xlink:href="img/sprite.svg#icon-arrow" />
                 </svg>
@@ -33,7 +33,7 @@
               <div class="language__list-wrapper">
                 <ul class="language__list list">
                   <li class="language__list-item" v-for="(button, i) in language.langList" :key="i">
-                    <button class="language__list-button button" type="button" @click="chooseLang">
+                    <button class="language__list-button button" type="button" @click="onLangButtonClick">
                       <img class="language__list-item-img" :src="button.img" :alt="button.lang" />
                       <span class="language__list-item-text">{{ button.lang }}</span>
                     </button>
@@ -188,26 +188,32 @@
         },
 
         methods: {
-          chooseLang: function(evt) {
+          onLangButtonClick: function(evt) {
             const langImg = evt.currentTarget.querySelector(".language__list-item-img");
             chooseLang.src = langImg.src;
             chooseLang.alt = langImg.alt;
 
-            this.toggleLangList();
+            this.onLangMenuButtonClick();
           },
 
-          toggleLangList: function() {
+          onLangMenuButtonClick: function() {
             if (!lang.classList.contains("language--opened")) {
               lang.classList.add("language--opened");
             } else {
               lang.classList.remove("language--opened");
             }
+          },
+
+          onBurgerClick: function() {
+            burger.classList.toggle("burger--active");
+            document.body.classList.toggle("body--no-scroll");
           }
         }
       });
 
       const lang = document.querySelector(".language");
       const chooseLang = lang.querySelector(".language__chosen-img");
+      const burger = document.querySelector(".burger");
     </script>
   </body>
 </html>

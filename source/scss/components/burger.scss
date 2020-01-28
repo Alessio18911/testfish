@@ -1,32 +1,73 @@
 .burger {
   position: relative;
-  width: 30px;
-  height: 22px;
-  padding: 9px 0;
-  font-size: 0;
-  outline: 1px solid red;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 27px;
+  height: 24px;
+  transition: transform 0.25s ease-in-out 0.25s;
 
-  &__button {
-    width: 100%;
-    height: 4px;
-    background-color: $blue1;
+  &.burger--active {
+    transform: rotate(45deg);
 
     &::before,
     &::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      width: 100%;
-      height: 4px;
-      background-color: inherit;
-    }
-
-    &::before {
-      top: -9px;
+      top: calc(50% - 2px);
+      @include transition(top);
+      animation: width-change 0.5s ease-in-out;
     }
 
     &::after {
-      bottom: -9px;
+      transform: rotate(90deg);
+      transition: top 0.25s ease-in-out, transform 0.25s ease-in-out 0.5s;
+    }
+
+    span {
+      width: 0;
+    }
+
+    + .page-header__main-nav-wrapper {
+      max-height: 800px;
+    }
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    width: 100%;
+    height: 4px;
+    background-color: $blue1;
+    transform: translateX(-50%);
+    transition: top 0.25s ease-in-out 0.5s;
+  }
+
+  &::before {
+    top: 0;
+  }
+
+  &::after {
+    top: calc(100% - 4px);
+    transform-origin: 7px -5px;
+    transition: top 0.25s ease-in-out 0.5s, transform 0.25s ease-in;
+  }
+
+  span {
+    width: 100%;
+    height: 4px;
+    background-color: $blue1;
+    @include transition(width);
+  }
+
+  @keyframes width-change {
+    50% {
+      width: 4px;
+    }
+
+    100% {
+      width: 100%;
     }
   }
 }

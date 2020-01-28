@@ -3,17 +3,17 @@
   flex-wrap: wrap;
   justify-content: space-between;
   margin: 0 -5px;
-  width: 86.7%;
+  width: 100%;
   font-weight: 600;
 
   @include mq($tablet) {
-    width: 633px;
     font-size: 12px;
   }
 
   @include mq($mobile) {
     display: block;
     padding: 25px 0;
+    margin: 0;
     font-size: 18px;
     background-color: $blue3;
   }

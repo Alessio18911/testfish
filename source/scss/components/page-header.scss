@@ -34,20 +34,36 @@
     }
   }
 
-  &__main-nav {
-    padding: 3px 0 0;
+  &__burger {
+    display: none;
+
+    @include mq(767) {
+      display: flex;
+    }
+  }
+
+  &__main-nav-wrapper {
+    width: 86.7%;
+    transition: max-height 0.25s ease-in-out 0.5s;
 
     @include mq($tablet) {
+      width: 633px;
       margin: 0 auto;
     }
 
     @include mq($mobile) {
-      display: none;
+      max-height: 0;
       position: absolute;
       top: 0;
       left: 0;
+      z-index: 1;
       width: 100%;
+      overflow: hidden;
     }
+  }
+
+  &__main-nav {
+    padding: 3px 0 0;
   }
 
   &__language {
