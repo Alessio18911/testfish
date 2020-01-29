@@ -30,7 +30,7 @@ function css() {
     .pipe(sass())
     .pipe(csso())
     .pipe(postcss([cmq({ sort: true }), autoprefixer()]))
-    .pipe(rename({ suffix: ".min" }))
+    .pipe(rename({ basename: "style-v1", suffix: ".min" }))
     .pipe(dest("dist/css", { sourcemaps: true }))
     .pipe(browserSync.stream());
 }
