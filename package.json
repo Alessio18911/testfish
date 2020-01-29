@@ -37,9 +37,7 @@
     "gulp-svgmin": "^2.2.0",
     "gulp-svgstore": "^7.0.1",
     "gulp-uglify": "^3.0.2",
-    "postcss-uncss": "^0.17.0",
-    "posthtml-include": "^1.3.2",
-    "uncss": "^0.17.2"
+    "posthtml-include": "^1.3.2"
   },
   "dependencies": {}
 }

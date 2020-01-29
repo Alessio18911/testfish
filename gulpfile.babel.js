@@ -6,8 +6,6 @@ const include = require("posthtml-include");
 const postcss = require("gulp-postcss");
 const autoprefixer = require("autoprefixer");
 const cmq = require("css-mqpacker");
-const postUncss = require("postcss-uncss");
-const uncss = require("uncss");
 const sass = require("gulp-sass");
 const svgmin = require("gulp-svgmin");
 const spriter = require("gulp-svgstore");
@@ -31,7 +29,7 @@ function css() {
     .pipe(plumber())
     .pipe(sass())
     .pipe(csso())
-    .pipe(postcss([postUncss({ html: "source/index.html" }), cmq({ sort: true }), autoprefixer()]))
+    .pipe(postcss([cmq({ sort: true }), autoprefixer()]))
     .pipe(rename({ suffix: ".min" }))
     .pipe(dest("dist/css", { sourcemaps: true }))
     .pipe(browserSync.stream());
